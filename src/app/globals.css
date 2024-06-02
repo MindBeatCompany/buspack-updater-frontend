@@ -1,0 +1,243 @@
+:root {
+    --color-buspack: #f28e2a;
+    /* COLOR VARIABLES */
+    --color-error: #ff6363;
+    --color-error-light: #ff7a7a;
+    --color-error-dark: #ff2e2e;
+    --color-warning: #ffd363;
+    --color-warning-light: #ffe8ad;
+    --color-warning-dark: #c78f00;
+    --color-success: #69bf77;
+    --color-success-light: #74ce54;
+    --color-success-dark: #32bf00;
+    --color-gray: #dedede;
+    --color-gray-light: #f3f3f3;
+    --color-gray-dark: #b1b1b1;
+    --color-active: #e4f7ff;
+    --color-light: #fff;
+    --color-background: #f9f9f9;
+
+    --color-neutral: #383944;
+    --color-neutral-light: #494b5a;
+    --color-primary: #2d81ff;
+    --color-primary-light: #4b90f9;
+    --color-primary-dark: #2a67c2;
+    --color-secondary: #8a5ad7;
+    --color-secondary-light: #e7d9ff;
+    --color-secondary-dark: #5728a4;
+
+    --color-link: #30c2ff;
+    --color-link-visited: #4467c1;
+
+    /* FONT VARIABLES */
+    --font-size-xxs: 1rem;
+    --font-size-xs: 1.2rem;
+    --font-size-sm: 1.4rem;
+    --font-size-md: 1.6rem;
+    --font-size-lg: 1.8rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.2rem;
+    --font-size-xxxl: 2.4rem;
+
+    /* LINE HEIGHT VARIABLES */
+    --line-height-sm: 0.8;
+    --line-height-md: 1.2;
+    --line-height-lg: 1.6;
+
+    /* SPACING VARIABLES */
+    --spacing-0: 0;
+    --spacing-1: 0.4rem;
+    --spacing-2: 0.8rem;
+    --spacing-3: 1.2rem;
+    --spacing-4: 1.6rem;
+    --spacing-5: 2.4rem;
+    --spacing-6: 3.2rem;
+    --spacing-7: 4.8rem;
+    --spacing-8: 6.4rem;
+    --spacing-9: 9.6rem;
+
+    /* GLOBAL BORDER RADIUS */
+    --border-radius: 4px;
+
+    /* GLOBAL BOX SHADOW */
+    --box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Font importada */
+@font-face {
+    font-family: "Poppins";
+    src: url("../../public/fonts/Poppins/Poppins-Light.ttf") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+::selection {
+    background: var(--color-primary-dark);
+    color: var(--color-light);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 75%;
+}
+
+body {
+    color: var(--color-neutral);
+    background-color: var(--color-background);
+    font-weight: 400;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.8rem;
+}
+
+h4 {
+    font-size: 2.4rem;
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+h6 {
+    font-size: 1.6rem;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link);
+}
+
+a:visited {
+    color: var(--color-link-visited);
+}
+
+.error-handler {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+@media only screen and (min-width: 1920px) {
+    html {
+        font-size: 81.25%;
+    }
+}
+
+@media only screen and (max-width: 1536px) {
+    html {
+        font-size: 68.75%;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    html {
+        font-size: 43.75%;
+    }
+}

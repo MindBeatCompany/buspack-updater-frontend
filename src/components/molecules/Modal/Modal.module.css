@@ -1,0 +1,27 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   width: fit-content;
+
+    height: fit-content;
+    padding: var(--spacing-3);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    z-index: 45;
+    animation: fade-in 200ms ease-in;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
