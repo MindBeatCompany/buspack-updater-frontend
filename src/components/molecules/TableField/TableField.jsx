@@ -79,6 +79,33 @@ const TableField = ({ name }) => {
                 showFormProccessModal && (
                     <Modal>
                         <div className={classes["form-modal-container"]}>
+                            <div
+                                style={{
+                                    width: "100%",
+                                    display: "flex",
+                                    justifyContent: "flex-end",
+                                }}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#000000"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    class="feather feather-x"
+                                    onClick={() =>
+                                        setshowFormProccessModal(false)
+                                    }
+                                    style={{ cursor: "pointer" }}
+                                >
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </div>
                             <FormsDinamic
                                 formulariosPerPage={1}
                                 formularios={formDataAxios}
