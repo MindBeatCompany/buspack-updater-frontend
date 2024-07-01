@@ -3,9 +3,9 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev -p 8084",
+        "dev": "next dev -p 8083",
         "build": "next build",
-        "start": "next start -p 8084",
+        "start": "next start -p 8083",
         "lint": "next lint",
         "start:prod": "pm2 start npm --name buspack-process-frontend -- start",
         "stop:prod": "pm2 stop buspack-process-frontend",
