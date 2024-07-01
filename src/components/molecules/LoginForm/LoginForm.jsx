@@ -9,6 +9,10 @@ import axios from "axios";
 // Styles
 import classes from "./LoginForm.module.css";
 
+// Config
+import { API_URL, API_PORT } from "@/config/env.js";
+const baseURL = `${API_URL}:${API_PORT}`;
+
 const LoginForm = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -16,10 +20,10 @@ const LoginForm = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(
-                "https://back-test.derservicios.com.ar/login",
-                { user: username, password: password }
-            );
+            const response = await axios.post(`${baseURL}/login`, {
+                user: username,
+                password: password,
+            });
             localStorage.setItem("isLoggedIn", "true");
             window.location.href = "/home";
         } catch (error) {
