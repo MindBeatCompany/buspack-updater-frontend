@@ -12,6 +12,10 @@ import Spinner from "@/components/atoms/Spinner";
 import Modal from "@/components/molecules/Modal";
 import FormsDinamic from "@/components/molecules/FormsDinamic";
 
+// Config
+import { API_URL, API_PORT } from "@/config/env.js";
+const baseURL = `${API_URL}:${API_PORT}`;
+
 const TableField = ({ name }) => {
     const openPopUp = () => {};
 
@@ -24,9 +28,7 @@ const TableField = ({ name }) => {
     const runUpdateDB = async () => {
         setLoading(true);
         try {
-            await axios.get(
-                "https://back-test.derservicios.com.ar/runUpdaterEnabledPlacesProcess"
-            );
+            await axios.get(`${baseURL}/runUpdaterEnabledPlacesProcess`);
             console.log("Base de datos actualizada con éxito");
             runProcess();
         } catch (error) {
@@ -41,9 +43,7 @@ const TableField = ({ name }) => {
     };
     const runProcess = async () => {
         try {
-            const { data } = await axios.get(
-                "https://back-test.derservicios.com.ar/runViewInserterP1"
-            );
+            const { data } = await axios.get(`${baseURL}/runViewInserterP1`);
             setshowFormProccessModal(true);
             setFormDataAxios(data);
             setTotalFormularios(data.length); // Actualiza la cantidad total de formularios
