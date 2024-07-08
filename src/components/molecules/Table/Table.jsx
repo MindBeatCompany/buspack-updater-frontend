@@ -29,7 +29,7 @@ const Table = () => {
 
             const runUpdateDB = async () => {
                 await axios
-                    .get(`${baseURL}/        runUpdaterEnabledPlacesProcess`)
+                    .get(`${baseURL}/runUpdaterEnabledPlacesProcess`)
                     .then(({ data }) => {
                         alert("Base de datos actualizada con exito");
                     })
