@@ -14,7 +14,7 @@ import FormsDinamic from "@/components/molecules/FormsDinamic";
 
 // Config
 import { API_URL, API_PORT } from "@/config/env.js";
-const baseURL = `${API_URL}:${API_PORT}`;
+const baseURL = `${API_URL}`;
 
 const TableField = ({ name }) => {
     const openPopUp = () => {};

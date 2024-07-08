@@ -11,7 +11,7 @@ import classes from "./LoginForm.module.css";
 
 // Config
 import { API_URL, API_PORT } from "@/config/env.js";
-const baseURL = `${API_URL}:${API_PORT}`;
+const baseURL = `${API_URL}`;
 
 const LoginForm = () => {
     const [username, setUsername] = useState("");

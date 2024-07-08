@@ -9,7 +9,7 @@ import classes from "./FormsDinamic.module.css";
 
 // Config
 import { API_URL, API_PORT } from "@/config/env.js";
-const baseURL = `${API_URL}:${API_PORT}`;
+const baseURL = `${API_URL}`;
 
 const Formulario = ({ datos, index, onFormSent, isSelected }) => {
     const [formData, setFormData] = useState({

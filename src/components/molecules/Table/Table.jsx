@@ -12,7 +12,7 @@ import { IconRun } from "@/assets/icons";
 
 // Config
 import { API_URL, API_PORT } from "@/config/env.js";
-const baseURL = `${API_URL}:${API_PORT}`;
+const baseURL = `${API_URL}`;
 
 // Components
 import TableField from "@/components/molecules/TableField";
