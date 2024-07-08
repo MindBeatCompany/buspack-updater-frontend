@@ -10,6 +10,10 @@ import classes from "./Table.module.css";
 // Icons
 import { IconRun } from "@/assets/icons";
 
+// Config
+import { API_URL, API_PORT } from "@/config/env.js";
+const baseURL = `${API_URL}:${API_PORT}`;
+
 // Components
 import TableField from "@/components/molecules/TableField";
 import Spinner from "@/components/atoms/Spinner";
@@ -25,7 +29,7 @@ const Table = () => {
 
             const runUpdateDB = async () => {
                 await axios
-                    .get("https://back-test.derservicios.com.ar/runUpdaterEnabledPlacesProcess")
+                    .get(`${baseURL}/        runUpdaterEnabledPlacesProcess`)
                     .then(({ data }) => {
                         alert("Base de datos actualizada con exito");
                     })

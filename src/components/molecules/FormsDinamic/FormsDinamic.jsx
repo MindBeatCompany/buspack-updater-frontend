@@ -7,13 +7,17 @@ import NewProgressBar from "@/components/molecules/NewProgressBar";
 // Styles
 import classes from "./FormsDinamic.module.css";
 
+// Config
+import { API_URL, API_PORT } from "@/config/env.js";
+const baseURL = `${API_URL}:${API_PORT}`;
+
 const Formulario = ({ datos, index, onFormSent, isSelected }) => {
     const [formData, setFormData] = useState({
         idog: datos["idog"],
         zip_code: datos["zip_code"] || "",
         province_name: datos["province_name"],
-        locality_name: datos["locality_name"],
-        enabled_place: datos["enabled_place"],
+        locality_name: datos["enabled_place"],
+        enabled_place: datos["locality_name"],
         isActive: datos["isActive"],
         zone: datos["zone"] || "",
         code: datos["code"] || "",
@@ -43,9 +47,7 @@ const Formulario = ({ datos, index, onFormSent, isSelected }) => {
         console.log("Data a enviar", formData);
         const runUpdateDB = async () => {
             await axios
-                .get(
-                    "https://back-test.derservicios.com.ar/runUpdaterEnabledPlacesProcess"
-                )
+                .get(`${baseURL}/runUpdaterEnabledPlacesProcess`)
                 .then(({ data }) => {
                     console.log("Base de datos actualizada con exito");
                 })
@@ -60,7 +62,7 @@ const Formulario = ({ datos, index, onFormSent, isSelected }) => {
         try {
             runUpdateDB();
             const response = await axios.post(
-                "https://back-test.derservicios.com.ar/runViewInserterP2",
+                `${baseURL}/runViewInserterP2`,
                 formData,
                 {
                     headers: {

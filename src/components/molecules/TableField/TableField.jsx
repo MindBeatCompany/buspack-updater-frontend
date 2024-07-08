@@ -12,6 +12,10 @@ import Spinner from "@/components/atoms/Spinner";
 import Modal from "@/components/molecules/Modal";
 import FormsDinamic from "@/components/molecules/FormsDinamic";
 
+// Config
+import { API_URL, API_PORT } from "@/config/env.js";
+const baseURL = `${API_URL}:${API_PORT}`;
+
 const TableField = ({ name }) => {
     const openPopUp = () => {};
 
@@ -24,9 +28,7 @@ const TableField = ({ name }) => {
     const runUpdateDB = async () => {
         setLoading(true);
         try {
-            await axios.get(
-                "https://back-test.derservicios.com.ar/runUpdaterEnabledPlacesProcess"
-            );
+            await axios.get(`${baseURL}/runUpdaterEnabledPlacesProcess`);
             console.log("Base de datos actualizada con éxito");
             runProcess();
         } catch (error) {
@@ -41,9 +43,7 @@ const TableField = ({ name }) => {
     };
     const runProcess = async () => {
         try {
-            const { data } = await axios.get(
-                "https://back-test.derservicios.com.ar/runViewInserterP1"
-            );
+            const { data } = await axios.get(`${baseURL}/runViewInserterP1`);
             setshowFormProccessModal(true);
             setFormDataAxios(data);
             setTotalFormularios(data.length); // Actualiza la cantidad total de formularios
@@ -79,6 +79,33 @@ const TableField = ({ name }) => {
                 showFormProccessModal && (
                     <Modal>
                         <div className={classes["form-modal-container"]}>
+                            <div
+                                style={{
+                                    width: "100%",
+                                    display: "flex",
+                                    justifyContent: "flex-end",
+                                }}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#000000"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    class="feather feather-x"
+                                    onClick={() =>
+                                        setshowFormProccessModal(false)
+                                    }
+                                    style={{ cursor: "pointer" }}
+                                >
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </div>
                             <FormsDinamic
                                 formulariosPerPage={1}
                                 formularios={formDataAxios}
