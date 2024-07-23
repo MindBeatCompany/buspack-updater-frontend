@@ -153,7 +153,7 @@ const Formulario = ({ datos, index, onFormSent, isSelected }) => {
                             <option value="inside1">INTERIOR 1</option>
                             <option value="inside2">INTERIOR 2</option>
                             <option value="inside3">INTERIOR 3</option>
-                            <option value="Iinside4">INTERIOR 4</option>
+                            <option value="inside4">INTERIOR 4</option>
                         </select>
                     </div>
                 </div>
