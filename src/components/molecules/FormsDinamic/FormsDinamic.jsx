@@ -47,7 +47,7 @@ const Formulario = ({ datos, index, onFormSent, isSelected }) => {
         console.log("Data a enviar", formData);
         const runUpdateDB = async () => {
             await axios
-                .get(`${baseURL}/runUpdaterEnabledPlacesProcess`)
+                .get(`${API_URL}/runUpdaterEnabledPlacesProcess`)
                 .then(({ data }) => {
                     console.log("Base de datos actualizada con exito");
                 })
@@ -62,7 +62,7 @@ const Formulario = ({ datos, index, onFormSent, isSelected }) => {
         try {
             runUpdateDB();
             const response = await axios.post(
-                `${baseURL}/runViewInserterP2`,
+                `${API_URL}/runViewInserterP2`,
                 formData,
                 {
                     headers: {
