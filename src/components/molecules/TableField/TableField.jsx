@@ -13,8 +13,7 @@ import Modal from "@/components/molecules/Modal";
 import FormsDinamic from "@/components/molecules/FormsDinamic";
 
 // Config
-import { API_URL, API_PORT } from "@/config/env.js";
-const baseURL = `${API_URL}:${API_PORT}`;
+import { API_URL } from "@/config/env.js";
 
 const TableField = ({ name }) => {
     const openPopUp = () => {};

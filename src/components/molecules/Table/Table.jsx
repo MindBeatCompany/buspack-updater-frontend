@@ -11,8 +11,7 @@ import classes from "./Table.module.css";
 import { IconRun } from "@/assets/icons";
 
 // Config
-import { API_URL, API_PORT } from "@/config/env.js";
-const baseURL = `${API_URL}:${API_PORT}`;
+import { API_URL } from "@/config/env.js";
 
 // Components
 import TableField from "@/components/molecules/TableField";

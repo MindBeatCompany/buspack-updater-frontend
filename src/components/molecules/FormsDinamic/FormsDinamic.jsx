@@ -8,8 +8,7 @@ import NewProgressBar from "@/components/molecules/NewProgressBar";
 import classes from "./FormsDinamic.module.css";
 
 // Config
-import { API_URL, API_PORT } from "@/config/env.js";
-const baseURL = `${API_URL}:${API_PORT}`;
+import { API_URL } from "@/config/env.js";
 
 const Formulario = ({ datos, index, onFormSent, isSelected }) => {
     const [formData, setFormData] = useState({
