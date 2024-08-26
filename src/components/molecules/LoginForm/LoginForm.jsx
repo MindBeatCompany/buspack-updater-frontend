@@ -20,7 +20,7 @@ const LoginForm = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${baseURL}/login`, {
+            const response = await axios.post(`${API_URL}/login`, {
                 user: username,
                 password: password,
             });

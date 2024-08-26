@@ -28,7 +28,7 @@ const TableField = ({ name }) => {
     const runUpdateDB = async () => {
         setLoading(true);
         try {
-            await axios.get(`${baseURL}/runUpdaterEnabledPlacesProcess`);
+            await axios.get(`${API_URL}/runUpdaterEnabledPlacesProcess`);
             console.log("Base de datos actualizada con éxito");
             runProcess();
         } catch (error) {
@@ -43,7 +43,7 @@ const TableField = ({ name }) => {
     };
     const runProcess = async () => {
         try {
-            const { data } = await axios.get(`${baseURL}/runViewInserterP1`);
+            const { data } = await axios.get(`${API_URL}/runViewInserterP1`);
             setshowFormProccessModal(true);
             setFormDataAxios(data);
             setTotalFormularios(data.length); // Actualiza la cantidad total de formularios
