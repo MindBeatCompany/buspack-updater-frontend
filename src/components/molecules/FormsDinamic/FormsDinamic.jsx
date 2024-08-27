@@ -43,7 +43,16 @@ const Formulario = ({ datos, index, onFormSent, isSelected }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Data a enviar", formData);
+
+        // Intercambia los valores de `locality_name` y `enabled_place`
+        const updatedFormData = {
+            ...formData,
+            locality_name: formData.enabled_place,
+            enabled_place: formData.locality_name,
+        };
+
+        console.log("Data a enviar", updatedFormData);
+
         const runUpdateDB = async () => {
             await axios
                 .get(`${API_URL}/runUpdaterEnabledPlacesProcess`)
@@ -59,10 +68,10 @@ const Formulario = ({ datos, index, onFormSent, isSelected }) => {
                 });
         };
         try {
-            runUpdateDB();
+            await runUpdateDB();
             const response = await axios.post(
                 `${API_URL}/runViewInserterP2`,
-                formData,
+                updatedFormData,
                 {
                     headers: {
                         "Content-Type": "application/json",
